@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+# Installer manifest for the signed, framework-dependent MSIX produced by the Windows
+# Release workflow. The package does NOT bundle the .NET or Windows App SDK runtimes;
+# they are declared below as winget package dependencies so winget installs them before
+# the app (and the Windows App SDK runtime is also auto-acquired by the OS Store).
+PackageIdentifier: Refractored.TinyClips
+PackageVersion: 1.0.6.0
+MinimumOSVersion: 10.0.22000.0
+InstallerType: msix
+Scope: user
+InstallModes:
+  - silent
+  - silentWithProgress
+PackageFamilyName: Refractored.TinyClips_vmshqmcyy894t
+Dependencies:
+  PackageDependencies:
+    - PackageIdentifier: Microsoft.DotNet.DesktopRuntime.10
+    - PackageIdentifier: Microsoft.WindowsAppRuntime.1.8
+Installers:
+  - Architecture: x64
+    InstallerUrl: https://github.com/jamesmontemagno/tiny-clips/releases/download/v1.0.6-windows/TinyClips-1.0.6-x64.msix
+    InstallerSha256: bab2508cdc8cec4f4005b54bf1efc69f5e1bdf36c788daa85c606335986cbb82
+    SignatureSha256: 01dc1a86ff2bb342af28c674aaf21e00c97ef3e2a523996fb53410e05f05b8aa
+  - Architecture: arm64
+    InstallerUrl: https://github.com/jamesmontemagno/tiny-clips/releases/download/v1.0.6-windows/TinyClips-1.0.6-arm64.msix
+    InstallerSha256: 67d8ac453bfac506ca30f5de6978676c22d483f1d270d9596349336c7897c61e
+    SignatureSha256: 4376573f0eee57e1eff4e13ec6a4b70570a809317819efd598588c705720408f
+ManifestType: installer
+ManifestVersion: 1.12.0
