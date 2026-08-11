@@ -51,11 +51,12 @@ jobs:
           git merge --no-ff "upstream/${DEFAULT_BRANCH}" --message "Sync upstream ${DEFAULT_BRANCH}"
           git push --force-with-lease origin "${SYNC_BRANCH}"
 
-          if gh pr list --head "${SYNC_BRANCH}" --base "${DEFAULT_BRANCH}" --state open --json number --jq 'length > 0' | grep -qx true; then
+          if gh pr list --repo "${GITHUB_REPOSITORY}" --head "${SYNC_BRANCH}" --base "${DEFAULT_BRANCH}" --state open --json number --jq 'length > 0' | grep -qx true; then
             exit 0
           fi
 
           gh pr create \
+            --repo "${GITHUB_REPOSITORY}" \
             --base "${DEFAULT_BRANCH}" \
             --head "${SYNC_BRANCH}" \
             --title "Sync upstream ${DEFAULT_BRANCH}" \
