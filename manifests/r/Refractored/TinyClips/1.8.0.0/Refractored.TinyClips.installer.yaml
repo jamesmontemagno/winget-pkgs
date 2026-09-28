@@ -1,0 +1,22 @@
+# Created using wingetcreate 1.12.13.0
+# yaml-language-server: $schema=https://aka.ms/winget-manifest.installer.1.12.0.schema.json
+
+PackageIdentifier: Refractored.TinyClips
+PackageVersion: 1.8.0.0
+MinimumOSVersion: 10.0.22000.0
+InstallerType: msix
+InstallModes:
+- silent
+- silentWithProgress
+PackageFamilyName: Refractored.TinyClips_vmshqmcyy894t
+Installers:
+- Architecture: x64
+  InstallerUrl: https://github.com/jamesmontemagno/tiny-clips/releases/download/v1.8.0-windows/TinyClips-1.8.0-x64.msix
+  InstallerSha256: cee0d332573daad01435f6632cebeba8fca583ab5bb8fcae2ca6e6c6f29e4cc9
+  SignatureSha256: 66216ccc1748970593d52dbc24ee9e63291a5f98cd5ca216434f3abe8b78863a
+- Architecture: arm64
+  InstallerUrl: https://github.com/jamesmontemagno/tiny-clips/releases/download/v1.8.0-windows/TinyClips-1.8.0-arm64.msix
+  InstallerSha256: 1340a2243d0a46740b1fd5bebb264e0c30dfb562fc44a8276ac78dd2aff8ba48
+  SignatureSha256: 6b8d4e2853403858d0401dd4c53c95539b20c3d6616d8ee1ca6a05882640420c
+ManifestType: installer
+ManifestVersion: 1.12.0
